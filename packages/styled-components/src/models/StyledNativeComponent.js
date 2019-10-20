@@ -1,5 +1,6 @@
 // @flow
 import merge from 'merge-anything';
+import validAttr from '@emotion/is-prop-valid';
 import React, { createElement, Component } from 'react';
 import determineTheme from '../utils/determineTheme';
 import { EMPTY_ARRAY, EMPTY_OBJECT } from '../utils/empties';
@@ -41,10 +42,15 @@ class StyledNativeComponent extends Component<*, *> {
             this.props
           );
 
+          // const children = props.children
           const propsForElement = {
-            ...props,
+            children: props.children,
             ...this.attrs,
             style: [generatedStyles].concat(style),
+          };
+
+          for (const propKey in props) {
+            if (validAttr(propKey)) propsForElement[propKey] = props[propKey]
           };
 
           if (forwardedRef) propsForElement.ref = forwardedRef;
