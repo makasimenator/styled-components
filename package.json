@@ -1,6 +1,7 @@
 {
   "name": "styled-components-project",
   "private": true,
+  "version": "v5.0.0-beta.9-fix-rnw",
   "scripts": {
     "build": "wsrun -p styled-components --exclude-missing build",
     "postbuild": "cp README.md packages/styled-components/",
