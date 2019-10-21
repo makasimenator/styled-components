@@ -66,6 +66,7 @@ const createPlugins = () => [
 
 const createAlias = () => ({
   'styled-components': styledComponentsSrc,
+  'react-native': 'react-native-web',
 });
 
 module.exports = [

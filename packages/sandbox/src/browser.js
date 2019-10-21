@@ -1,18 +1,18 @@
 import React from 'react';
 import { hydrate } from 'react-dom';
 
-import App from './App';
+import AppRNW from './AppRNW';
 
 const render = Component => {
   hydrate(<Component />, document.querySelector('#react-root'));
 };
 
-render(App);
+render(AppRNW);
 
 if (module.hot) {
-  module.hot.accept('./App', () => {
+  module.hot.accept('./AppRNW', () => {
     // eslint-disable-next-line global-require
-    const { default: Component } = require('./App');
+    const { default: Component } = require('./AppRNW');
     render(Component);
   });
 }
